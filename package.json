@@ -1,6 +1,6 @@
 {
   "name": "curly-express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "boilerplate for creating npm packages",
   "main": "./lib",
   "scripts": {
@@ -15,7 +15,13 @@
     "test": "npm run test:lint && npm run test:security && npm run test:coverage",
     "semantic-release": "semantic-release"
   },
-  "keywords": ["curl", "express", "middleware", "debug", "logging"],
+  "keywords": [
+    "curl",
+    "express",
+    "middleware",
+    "debug",
+    "logging"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pustovitDmytro/curly-express.git"
