@@ -15,6 +15,7 @@
     "test": "npm run test:lint && npm run test:security && npm run test:coverage",
     "semantic-release": "semantic-release"
   },
+  "keywords": ["curl", "express", "middleware", "debug", "logging"],
   "repository": {
     "type": "git",
     "url": "https://github.com/pustovitDmytro/curly-express.git"

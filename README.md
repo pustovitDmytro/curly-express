@@ -1,5 +1,5 @@
 # curly-express
-**curly-express** boilerplate for creating npm packages.
+**curly-express** print all received requests as curl's.
 
 [![Version][badge-vers]][npm]
 [![Dependencies][badge-deps]][npm]
@@ -30,8 +30,61 @@ To install the library run following command
 
 ## Usage
 
-```javascript
+This package can be used as middleware. Note that it must be placed after [body-parser](https://www.npmjs.com/package/body-parser) in order to receive request body.
 
+### Default configuration
+
+In default configuration middleware will print cURL to stdout:
+
+```javascript
+import curl             from 'curly-express';
+import express          from 'express';
+
+const app = express();
+
+app.use(bodyParser.json());
+app.use(curl);
+app.use(router);
+```
+
+### Advanced usage
+
+You can customize some stuff by importing factory method:
+
+#### Customize logger
+ 
+You can pass own logger as optional parameter:
+
+```javascript
+import { cURL }  from 'curly-express';
+
+const curl =  cURL({
+    log : console.log
+})
+
+app.use(curl);
+```
+
+#### Attach to request
+
+If you need curl in further middlewares, you can do it with optional argument ```attach```:
+
+```javascript
+import { cURL }  from 'curly-express';
+
+const curl =  cURL({
+    attach : true
+})
+
+app.use(curl); // check req._curl
+```
+
+it will add curl to ```_curl``` property of request object, if you want to change property key, use:
+
+```javascript
+const curl =  cURL({
+    attach : '_curl_custom_key'
+})
 ```
 
 ## Contribute
