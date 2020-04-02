@@ -2,20 +2,23 @@
     "branch": "master",
     "ci": false,
     "plugins": [
-        ["@semantic-release/commit-analyzer",{
-            "preset": "eslint",
-            "releaseRules": [
-                { "type": "Fix", "release": "patch" },
-                { "type": "Update", "release": "minor" },
-                { "type": "New", "release": "minor" },
-                { "type": "Breaking", "release": "major" },
-                { "type": "Docs", "release": "patch" },
-                { "type": "Upgrade", "release": "patch" }
-            ],
-            "parserOpts": {
-                "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+        [
+            "@semantic-release/commit-analyzer",
+            {
+                "preset": "eslint",
+                "releaseRules": [
+                    { "tag": "Fix", "release": "patch" },
+                    { "tag": "Update", "release": "minor" },
+                    { "tag": "New", "release": "minor" },
+                    { "tag": "Breaking", "release": "major" },
+                    { "tag": "Docs", "release": "patch" },
+                    { "tag": "Upgrade", "release": "patch" }
+                ],
+                "parserOpts": {
+                    "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+                }
             }
-        }],
+        ],
         "@semantic-release/release-notes-generator",
         [
             "@semantic-release/changelog", {
