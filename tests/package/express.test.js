@@ -46,7 +46,7 @@ test('Get all users', async function () {
     );
 
     assert.exists(
-        requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.19.2' -H 'host: localhost:21356' -H 'connection: close' http://localhost:21356/users?limit=5")
+        requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'connection: close' http://localhost:21356/users?limit=5")
     );
 });
 
@@ -67,7 +67,7 @@ test('Add user', async function () {
     );
 
     assert.exists(
-        requests.find(r => r === "curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: application/json;charset=utf-8' -H 'user-agent: axios/0.19.2' -H 'content-length: 44' -H 'host: localhost:21356' -H 'connection: close' -d '{\"name\":\"Ortega\",\"email\":\"lujnipwob@eve.sn\"}' http://localhost:21356/users")
+        requests.find(r => r === "curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: application/json;charset=utf-8' -H 'user-agent: axios/0.21.1' -H 'content-length: 44' -H 'host: localhost:21356' -H 'connection: close' -d '{\"name\":\"Ortega\",\"email\":\"lujnipwob@eve.sn\"}' http://localhost:21356/users")
     );
 });
 
