@@ -1,7 +1,7 @@
 {
   "name": "curly-express",
-  "version": "0.0.1",
   "description": "print all received requests as curl's",
+  "version": "1.0.1",
   "main": "./lib",
   "scripts": {
     "build": "babel src --out-dir ./lib",
