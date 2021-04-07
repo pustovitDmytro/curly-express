@@ -101,7 +101,6 @@ The Tag is one of the following:
 * **Update** - for a backwards-compatible enhancement.
 * **Breaking** - for a backwards-incompatible enhancement.
 * **Docs** - changes to documentation only.
-* **Build** - changes to build process only.
 * **New** - implemented a new feature.
 * **Upgrade** - for a dependency upgrade.
 * **Chore** - for tests, refactor, style, etc.
