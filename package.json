@@ -1,7 +1,7 @@
 {
   "name": "curly-express",
   "version": "0.0.1",
-  "description": "boilerplate for creating npm packages",
+  "description": "print all received requests as curl's",
   "main": "./lib",
   "scripts": {
     "build": "babel src --out-dir ./lib",
@@ -15,7 +15,13 @@
     "test": "npm run test:lint && npm run test:security && npm run test:coverage",
     "semantic-release": "semantic-release"
   },
-  "keywords": ["curl", "express", "middleware", "debug", "logging"],
+  "keywords": [
+    "curl",
+    "express",
+    "middleware",
+    "debug",
+    "logging"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pustovitDmytro/curly-express.git"
@@ -27,7 +33,7 @@
   },
   "homepage": "https://github.com/pustovitDmytro/curly-express#readme",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
+    "@babel/cli": "^7.13.14",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
@@ -42,7 +48,7 @@
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/npm": "^5.1.7",
     "@semantic-release/release-notes-generator": "^7.1.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "body-parser": "^1.19.0",
@@ -63,7 +69,7 @@
     "json-server": "^0.16.1",
     "mocha": "^6.2.3",
     "nyc": "^14.1.1",
-    "semantic-release": "^15.13.19",
+    "semantic-release": "^17.4.2",
     "supertest": "^4.0.2",
     "uuid": "^3.3.2"
   }
