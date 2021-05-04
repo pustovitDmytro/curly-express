@@ -12,11 +12,13 @@ export function build({ method = 'GET', url, headers = {}, json, urlencoded, for
     if (json) {
         command.push('-d', `'${JSON.stringify(json)}'`);
     }
+
     if (urlencoded) {
         Object.entries(urlencoded).forEach(([ key, value ]) => {
             command.push('--data-urlencode', `'${key}=${value}'`);
         });
     }
+
     if (form) {
         form.forEach(({ key, value }) => {
             command.push('-F', `'${key}=${value}'`);

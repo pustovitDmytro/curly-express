@@ -14,12 +14,12 @@ export function cURL({ log, attach }) {
 
         if (req.busboy) {
             obj.form = [];
-            await new Promise(async (resolve) => {
-                req.busboy.on('file', function (fieldname, file, filename) {
+            await new Promise((resolve) => {
+                req.busboy.on('file', (fieldname, file, filename) => {
                     obj.form.push({ key: fieldname, value: `@${filename}` });
                     file.on('data', () => {});
                 });
-                req.busboy.on('field', function (key, value) {
+                req.busboy.on('field', (key, value) => {
                     obj.form.push({ key, value });
                 });
                 req.busboy.on('finish', resolve);
@@ -27,6 +27,7 @@ export function cURL({ log, attach }) {
                 req.pipe(req.busboy);
             });
         }
+
         let isJSON = req._body;
 
         if (req.headers['content-type'] === 'application/x-www-form-urlencoded') {
@@ -44,6 +45,7 @@ export function cURL({ log, attach }) {
 
             req[attachKey] = curl; // eslint-disable-line no-param-reassign
         }
+
         next();
     };
 }
