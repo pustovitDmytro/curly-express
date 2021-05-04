@@ -55,9 +55,7 @@ test('Get all users', async function () {
         users
     );
 
-    assert.exists(
-        requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'connection: close' http://localhost:21356/jsonServer/users?limit=5")
-    );
+    assert.exists(requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'connection: close' http://localhost:21356/jsonServer/users?limit=5"));
 });
 
 
@@ -76,9 +74,7 @@ test('Add user', async function () {
         { ...user, id: 3 }
     );
 
-    assert.exists(
-        requests.find(r => r === "curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: application/json;charset=utf-8' -H 'user-agent: axios/0.21.1' -H 'content-length: 44' -H 'host: localhost:21356' -H 'connection: close' -d '{\"name\":\"Ortega\",\"email\":\"lujnipwob@eve.sn\"}' http://localhost:21356/jsonServer/users")
-    );
+    assert.exists(requests.find(r => r === "curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: application/json;charset=utf-8' -H 'user-agent: axios/0.21.1' -H 'content-length: 44' -H 'host: localhost:21356' -H 'connection: close' -d '{\"name\":\"Ortega\",\"email\":\"lujnipwob@eve.sn\"}' http://localhost:21356/jsonServer/users"));
 });
 
 test('busboy Formdata', async function () {
@@ -105,7 +101,7 @@ test('busboy Formdata', async function () {
 
 test('Attach to request', async function () {
     assert.equal(
-        await new Promise(async (resolve, reject) => {
+        await new Promise((resolve, reject) => {
             server.use('/check_attach', (req, res) => {
                 try {
                     assert.exists(req._curl);
@@ -115,7 +111,7 @@ test('Attach to request', async function () {
                     reject(error);
                 }
             });
-            await axios(`http://localhost:${port}/check_attach`);
+            axios(`http://localhost:${port}/check_attach`);
         }),
         'curl -X GET -H \'accept: application/json, text/plain, */*\' -H \'user-agent: axios/0.21.1\' -H \'host: localhost:21356\' -H \'connection: close\' http://localhost:21356/check_attach'
     );
@@ -125,7 +121,7 @@ test('Attach to request', async function () {
 test('Attach without log', async function () {
     const key = '_CUSTOM_CURL_ATTACH_KEY';
 
-    await new Promise(async (resolve, reject) => {
+    await new Promise((resolve, reject) => {
         server.use(
             '/test_path',
             cURL({ log: null, attach: key }),
@@ -139,7 +135,7 @@ test('Attach without log', async function () {
                 }
             }
         );
-        await axios(`http://localhost:${port}/test_path`);
+        axios(`http://localhost:${port}/test_path`);
     });
 });
 
@@ -154,9 +150,7 @@ test('Basic auth', async function () {
         users
     );
 
-    assert.exists(
-        requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'authorization: Basic YWRtaW46cGFzc3dvcmQ=' -H 'connection: close' --user admin:password http://localhost:21356/jsonServer/users?limit=5")
-    );
+    assert.exists(requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'authorization: Basic YWRtaW46cGFzc3dvcmQ=' -H 'connection: close' --user admin:password http://localhost:21356/jsonServer/users?limit=5"));
 });
 
 test('data urlencoded', async function () {
