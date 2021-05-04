@@ -92,6 +92,6 @@
     "uuid": "^8.0.0"
   },
   "dependencies": {
-    "basic-auth": "^2.0.1"
+    "basic-auth": "2.0.1"
   }
 }
