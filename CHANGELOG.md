@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/pustovitDmytro/curly-express/compare/v1.3.0...v1.3.1) (2021-05-06)
+
+
+### Upgrade
+
+* Pin dependency basic-auth to 2.0.1 ([d60669a](https://github.com/pustovitDmytro/curly-express/commit/d60669ac7692ad969dd47eda34798e7b3fb64219))
+
 # [1.3.0](https://github.com/pustovitDmytro/curly-express/compare/v1.2.0...v1.3.0) (2021-05-04)
 
 
