@@ -1,10 +1,8 @@
-/* eslint-disable more/no-then */
 import jsonServer from 'json-server';
 import { assert } from 'chai';
 import axios from 'axios';
+import bodyParser from 'body-parser';
 import curl from '../entry';
-
-const bodyParser = require('body-parser');
 
 const port = 12653;
 const users = [ {

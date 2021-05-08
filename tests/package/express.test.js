@@ -1,4 +1,3 @@
-/* eslint-disable more/no-then */
 import fs from 'fs';
 import path from 'path';
 import jsonServer from 'json-server';
@@ -6,10 +5,8 @@ import { assert } from 'chai';
 import axios from 'axios';
 import FormData from 'form-data';
 import busboy from  'connect-busboy';
-// import multiparty from 'connect-multiparty';
+import bodyParser from 'body-parser';
 import { cURL } from '../entry';
-
-const bodyParser = require('body-parser');
 
 const port = 21356;
 const users = [ {
