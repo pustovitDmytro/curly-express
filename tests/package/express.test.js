@@ -7,6 +7,7 @@ import FormData from 'form-data';
 import busboy from  'connect-busboy';
 import bodyParser from 'body-parser';
 import { cURL } from '../entry';
+import { testsRootFolder } from '../constants';
 
 const port = 21356;
 const users = [ {
@@ -79,9 +80,9 @@ test('busboy Formdata', async function () {
 
     bodyFormData.append('name', 'Fred');
     bodyFormData.append('age', 25);
-    bodyFormData.append('images', fs.createReadStream(path.join(__dirname, '../files/liverpool.png')));
-    bodyFormData.append('images', fs.createReadStream(path.join(__dirname, '../files/liverpool.png')));
-    bodyFormData.append('logo', fs.createReadStream(path.join(__dirname, '../files/liverpool.png')));
+    bodyFormData.append('images', fs.createReadStream(path.join(testsRootFolder, 'files/liverpool.png')));
+    bodyFormData.append('images', fs.createReadStream(path.join(testsRootFolder, 'files/liverpool.png')));
+    bodyFormData.append('logo', fs.createReadStream(path.join(testsRootFolder, 'files/liverpool.png')));
     const response = await axios({
         method  : 'POST',
         url     : `http://localhost:${port}/answer_with_curl`,
