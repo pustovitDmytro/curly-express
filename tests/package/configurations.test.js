@@ -4,7 +4,7 @@ import axios from 'axios';
 import bodyParser from 'body-parser';
 import curl from '../entry';
 
-const port = 12653;
+const port = 12_653;
 const users = [ {
     'id'    : 1,
     'name'  : 'Leigh',
@@ -20,7 +20,7 @@ const router = jsonServer.router({ users });
 
 suite('Default configuration');
 
-before(async () => {
+before(async function () {
     server.use(bodyParser.json());
     server.use(curl);
     server.use(router);

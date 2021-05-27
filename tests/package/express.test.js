@@ -1,3 +1,4 @@
+/* eslint-disable no-secrets/no-secrets */
 import fs from 'fs';
 import path from 'path';
 import jsonServer from 'json-server';
@@ -9,7 +10,7 @@ import bodyParser from 'body-parser';
 import { cURL } from '../entry';
 import { testsRootFolder } from '../constants';
 
-const port = 21356;
+const port = 21_356;
 const users = [ {
     'id'    : 1,
     'name'  : 'Leigh',
@@ -26,7 +27,7 @@ const requests = [];
 
 suite('Express');
 
-before(async () => {
+before(async function () {
     const middleware = cURL({
         log    : curl => requests.push(curl),
         attach : true
