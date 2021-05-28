@@ -1,3 +1,16 @@
+## [1.3.3](https://github.com/pustovitDmytro/curly-express/compare/v1.3.2...v1.3.3) (2021-05-28)
+
+
+### Chore
+
+* (refactor) update code to match styleguide ([8f1be9c](https://github.com/pustovitDmytro/curly-express/commit/8f1be9c96b762cf86b6d361d49c768e64374b1a9))
+* update eslint ([6b174b1](https://github.com/pustovitDmytro/curly-express/commit/6b174b184a792fc282ef3228079f23fa81f2bcb5))
+* update eslint-config-incredible ([58c31d2](https://github.com/pustovitDmytro/curly-express/commit/58c31d295fa2df7cb3dceda8db6a417144a4b1c3))
+
+### Fix
+
+* set node 10 as babel target ([10219e9](https://github.com/pustovitDmytro/curly-express/commit/10219e956bc7b7ea8a289157e64a1e6eda069001))
+
 ## [1.3.2](https://github.com/pustovitDmytro/curly-express/compare/v1.3.1...v1.3.2) (2021-05-25)
 
 
