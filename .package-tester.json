@@ -1,0 +1,6 @@
+{
+    "dir": "tmp/package-tests",
+    "modules": [ "json-server" ],
+    "copy": [ [ "tests/files", "files" ] ],
+    "copyDefaultFiles": true
+}

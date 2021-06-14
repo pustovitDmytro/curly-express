@@ -18,6 +18,7 @@
 [![Coverage Status][badge-coverage]][url-coverage]
 
 [![Commit activity][commit-activity-badge]][github]
+[![FOSSA][fossa-badge]][fossa-url]
 [![License][badge-lic]][github]
 
 ## Table of Contents
@@ -76,7 +77,7 @@ import { cURL }  from 'curly-express';
 
 const curl =  cURL({
     log : console.log
-})
+});
 
 app.use(curl);
 ```
@@ -90,7 +91,7 @@ import { cURL }  from 'curly-express';
 
 const curl =  cURL({
     attach : true
-})
+});
 
 app.use(curl); // check req._curl
 ```
@@ -100,7 +101,7 @@ it will add curl to ```_curl``` property of the request object. If you want to c
 ```javascript
 const curl =  cURL({
     attach : '_curl_custom_key'
-})
+});
 ```
 
 ## Contribute
@@ -147,4 +148,5 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [appveyor-badge]: https://ci.appveyor.com/api/projects/status/3sbmgut9rl4xmt59/branch/master?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/curly-express/branch/master
 
-
+[fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fcurly-express.svg?type=shield
+[fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fcurly-express?ref=badge_shield

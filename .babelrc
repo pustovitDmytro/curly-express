@@ -22,7 +22,7 @@
           "root": ["./src"],
           "alias": {
             "tests": "./tests",
-            "package": "./package.json",
+            "package": "./package.json"
           }
         }
       ],
