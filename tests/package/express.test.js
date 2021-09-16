@@ -7,6 +7,7 @@ import axios from 'axios';
 import FormData from 'form-data';
 import busboy from  'connect-busboy';
 import bodyParser from 'body-parser';
+import { version as axiosVersion } from 'axios/package.json';
 import { cURL } from '../entry';
 import { testsRootFolder } from '../constants';
 
@@ -45,7 +46,7 @@ before(async function () {
     });
 });
 
-test('Get all users', async function () {
+test('List users [GET]', async function () {
     assert.deepEqual(
         await axios({
             method : 'GET',
@@ -54,11 +55,11 @@ test('Get all users', async function () {
         users
     );
 
-    assert.exists(requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'connection: close' http://localhost:21356/jsonServer/users?limit=5"));
+    assert.exists(requests.find(r => r === `curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/${axiosVersion}' -H 'host: localhost:21356' -H 'connection: close' http://localhost:21356/jsonServer/users?limit=5`));
 });
 
 
-test('Add user', async function () {
+test('Add user [POST]', async function () {
     const user = {
         'name'  : 'Ortega',
         'email' : 'lujnipwob@eve.sn'
@@ -72,8 +73,9 @@ test('Add user', async function () {
         }).then(r => r.data),
         { ...user, id: 3 }
     );
+    const request = requests.find(r => r.includes(user.email));
 
-    assert.exists(requests.find(r => r === "curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: application/json;charset=utf-8' -H 'user-agent: axios/0.21.1' -H 'content-length: 44' -H 'host: localhost:21356' -H 'connection: close' -d '{\"name\":\"Ortega\",\"email\":\"lujnipwob@eve.sn\"}' http://localhost:21356/jsonServer/users"));
+    assert.equal(request, `curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: application/json' -H 'user-agent: axios/${axiosVersion}' -H 'content-length: 44' -H 'host: localhost:21356' -H 'connection: close' -d '{"name":"Ortega","email":"lujnipwob@eve.sn"}' http://localhost:21356/jsonServer/users`);
 });
 
 test('busboy Formdata', async function () {
@@ -93,7 +95,7 @@ test('busboy Formdata', async function () {
 
     assert.equal(
         response.data,
-        `curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: multipart/form-data; boundary=${bodyFormData.getBoundary()}' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'connection: close' -H 'transfer-encoding: chunked' -F 'name=Fred' -F 'age=25' -F 'images=@liverpool.png' -F 'images=@liverpool.png' -F 'logo=@liverpool.png' http://localhost:21356/answer_with_curl`
+        `curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: multipart/form-data; boundary=${bodyFormData.getBoundary()}' -H 'user-agent: axios/${axiosVersion}' -H 'host: localhost:21356' -H 'connection: close' -H 'transfer-encoding: chunked' -F 'name=Fred' -F 'age=25' -F 'images=@liverpool.png' -F 'images=@liverpool.png' -F 'logo=@liverpool.png' http://localhost:21356/answer_with_curl`
     );
 });
 
@@ -112,7 +114,7 @@ test('Attach to request', async function () {
             });
             axios(`http://localhost:${port}/check_attach`);
         }),
-        'curl -X GET -H \'accept: application/json, text/plain, */*\' -H \'user-agent: axios/0.21.1\' -H \'host: localhost:21356\' -H \'connection: close\' http://localhost:21356/check_attach'
+        `curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/${axiosVersion}' -H 'host: localhost:21356' -H 'connection: close' http://localhost:21356/check_attach`
     );
 });
 
@@ -149,7 +151,7 @@ test('Basic auth', async function () {
         users
     );
 
-    assert.exists(requests.find(r => r === "curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/0.21.1' -H 'host: localhost:21356' -H 'authorization: Basic YWRtaW46cGFzc3dvcmQ=' -H 'connection: close' --user admin:password http://localhost:21356/jsonServer/users?limit=5"));
+    assert.exists(requests.find(r => r === `curl -X GET -H 'accept: application/json, text/plain, */*' -H 'user-agent: axios/${axiosVersion}' -H 'host: localhost:21356' -H 'authorization: Basic YWRtaW46cGFzc3dvcmQ=' -H 'connection: close' --user admin:password http://localhost:21356/jsonServer/users?limit=5`));
 });
 
 test('data urlencoded', async function () {
@@ -172,7 +174,7 @@ test('data urlencoded', async function () {
 
     assert.equal(
         response.data,
-        'curl -X POST -H \'accept: application/json, text/plain, */*\' -H \'content-type: application/x-www-form-urlencoded\' -H \'user-agent: axios/0.21.1\' -H \'content-length: 231\' -H \'host: localhost:21356\' -H \'connection: close\' --data-urlencode \'name=Akexorcist\' --data-urlencode \'age=28\' --data-urlencode \'position=Android Developer\' --data-urlencode \'description=birthdate=25-12-1989&favourite=coding%20coding%20and%20coding&company=Nextzy%20Technologies&website=http://www.akexorcist.com/\' --data-urlencode \'awesome=true\' http://localhost:21356/answer_with_curl'
+        `curl -X POST -H 'accept: application/json, text/plain, */*' -H 'content-type: application/x-www-form-urlencoded' -H 'user-agent: axios/${axiosVersion}' -H 'content-length: 231' -H 'host: localhost:21356' -H 'connection: close' --data-urlencode 'name=Akexorcist' --data-urlencode 'age=28' --data-urlencode 'position=Android Developer' --data-urlencode 'description=birthdate=25-12-1989&favourite=coding%20coding%20and%20coding&company=Nextzy%20Technologies&website=http://www.akexorcist.com/' --data-urlencode 'awesome=true' http://localhost:21356/answer_with_curl`
     );
 });
 
