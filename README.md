@@ -28,14 +28,14 @@
   - [Contribute](#contribute)
 
 ## Requirements
-[![Platform Status][appveyor-badge]][appveyor-url]
+[![Platform Status][node-ver-test-badge]][node-ver-test-url]
 
 To use library you need to have [node](https://nodejs.org) and [npm](https://www.npmjs.com) installed in your machine:
 
 * node `>=10`
 * npm `>=6`
 
-Package is [continuously tested][appveyor-url] on darwin, linux, win32 platforms. All active and maintenance [LTS](https://nodejs.org/en/about/releases/) node releases are supported.
+Package is [continuously tested][node-ver-test-url] on darwin, linux and win32 platforms. All active and maintenance [LTS](https://nodejs.org/en/about/releases/) node releases are supported.
 
 ## Installation
 
@@ -111,7 +111,7 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [npm]: https://www.npmjs.com/package/curly-express
 [github]: https://github.com/pustovitDmytro/curly-express
 [coveralls]: https://coveralls.io/github/pustovitDmytro/curly-express?branch=master
-[badge-deps]: https://img.shields.io/david/pustovitDmytro/curly-express.svg
+[badge-deps]: https://img.shields.io/librariesio/release/npm/curly-express.svg
 [badge-vuln]: https://img.shields.io/snyk/vulnerabilities/npm/curly-express.svg?style=popout
 [badge-vers]: https://img.shields.io/npm/v/curly-express.svg
 [badge-lic]: https://img.shields.io/github/license/pustovitDmytro/curly-express.svg
@@ -148,8 +148,8 @@ Make the changes to the code and tests. Then commit to your branch. Be sure to f
 [npm-size-badge]: https://img.shields.io/bundlephobia/min/curly-express
 [npm-size-url]: https://bundlephobia.com/result?p=curly-express
 
-[appveyor-badge]: https://ci.appveyor.com/api/projects/status/3sbmgut9rl4xmt59/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/pustovitDmytro/curly-express/branch/master
+[node-ver-test-badge]: https://github.com/pustovitDmytro/curly-express/actions/workflows/npt.yml/badge.svg?branch=master
+[node-ver-test-url]: https://github.com/pustovitDmytro/curly-express/actions?query=workflow%3A%22Node.js+versions%22
 
 [fossa-badge]: https://app.fossa.com/api/projects/custom%2B24828%2Fcurly-express.svg?type=shield
 [fossa-url]: https://app.fossa.com/projects/custom%2B24828%2Fcurly-express?ref=badge_shield
