@@ -1,3 +1,19 @@
+## [1.3.7](https://github.com/pustovitDmytro/curly-express/compare/v1.3.6...v1.3.7) (2022-02-28)
+
+
+### Chore
+
+* fixes some npm audit vulnerabilities (#53) ([9c88898](https://github.com/pustovitDmytro/curly-express/commit/9c88898f25e55991704e22e9e2517bd53bcd6b40)), closes [#53](https://github.com/pustovitDmytro/curly-express/issues/53)
+* Lock file maintenance (#40) ([908ca18](https://github.com/pustovitDmytro/curly-express/commit/908ca18a85082e80f2c612d61dca3590721626c6)), closes [#40](https://github.com/pustovitDmytro/curly-express/issues/40)
+* Lock file maintenance (#55) ([81db33d](https://github.com/pustovitDmytro/curly-express/commit/81db33de5da5d973dc298667d28f1b1befdc3e74)), closes [#55](https://github.com/pustovitDmytro/curly-express/issues/55)
+* Update dependency nanoid to 3.1.31 [SECURITY] (#50) ([50f1c88](https://github.com/pustovitDmytro/curly-express/commit/50f1c8874f525ee7d45f579c775c3997c2e70e4f)), closes [#50](https://github.com/pustovitDmytro/curly-express/issues/50)
+* Update dependency node-fetch to 2.6.7 [SECURITY] (#51) ([66ffe40](https://github.com/pustovitDmytro/curly-express/commit/66ffe40373ce6703d9ccacd1ab2f71b7039dc60f)), closes [#51](https://github.com/pustovitDmytro/curly-express/issues/51)
+* Update devDependencies (non-major) (#44) ([2516d6a](https://github.com/pustovitDmytro/curly-express/commit/2516d6a9b45740e417e431129956ccab15830a0b)), closes [#44](https://github.com/pustovitDmytro/curly-express/issues/44)
+
+### Docs
+
+* help Ukraine 🇺🇦 ([0f29cb1](https://github.com/pustovitDmytro/curly-express/commit/0f29cb16da8b682a97744efc5213d2288f452139))
+
 ## [1.3.6](https://github.com/pustovitDmytro/curly-express/compare/v1.3.5...v1.3.6) (2022-01-22)
 
 
