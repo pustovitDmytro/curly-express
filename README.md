@@ -1,3 +1,4 @@
+![Logo](.docs/logo_250.png "curly-express")
 # curly-express
 **curly-express** print all received requests as curls.
 
