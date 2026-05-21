@@ -90,7 +90,7 @@
     "semantic-release": "^19.0.5",
     "semantic-release-telegram": "^1.6.2",
     "supertest": "^6.3.3",
-    "uuid": "^8.3.2"
+    "uuid": "^11.0.0"
   },
   "dependencies": {
     "basic-auth": "2.0.1"
